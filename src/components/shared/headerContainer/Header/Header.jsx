@@ -29,15 +29,17 @@ const Header = () => {
     <>
       <Container>
         <LeftSide>
-          <a href="./">
+          <Link to="/">
             <img src="/img/logo.png" alt="" />
-          </a>
+          </Link>
         </LeftSide>
 
         <RightSide>
           <DesktopMenu>
             <MenuLinks />
-            <Button>Login</Button>
+            <Link to={"/login"}>
+              <Button>Login</Button>
+            </Link>
           </DesktopMenu>
 
           <MobileMenu>

@@ -3,7 +3,13 @@ import {createBrowserRouter} from "react-router-dom";
 // import PrivateRoute from "../components/shared/privateRoute/PrivateRoute";
 import PublicRoute from "../components/shared/publicRoute/PublicRoute";
 import Root from "../layouts/Root";
-import {HomePage, LoginPage, NotFoundPage, RegisterPage} from "../pages";
+import {
+  AboutPage,
+  HomePage,
+  LoginPage,
+  NotFoundPage,
+  RegisterPage,
+} from "../pages";
 
 export const routes = createBrowserRouter([
   {
@@ -28,6 +34,10 @@ export const routes = createBrowserRouter([
       //     </PrivateRoute>
       //   ),
       // },
+      {
+        path: "/about",
+        element: <AboutPage />,
+      },
       {
         path: "/login",
         element: (
