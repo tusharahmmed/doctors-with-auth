@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --section-background: #312e7b;
+  --button-background: #01974d;
+  --title-color: #110f46;
+  --description-color: #454e65;
+  --subtitle-color: #6a6f7a;
+}
+
+.section-side-padding {
+  padding: 0 10%;
+}
+a {
+  text-decoration: none;
+}
+
+/* prelaader */
+#preloader {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: #fff;
+  z-index: 99999;
+  background-image: url("../public/img/preloader.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 300px;
+}
+
+/* service section  */
+.service-item:hover {
+  background: #ffab25;
+}
+.service-item:hover > .service-icon img {
+  background: var(--button-background);
+}
+.service-item:hover .__service-title,
+.__service-description,
+.__service-item-link {
+  color: #fff;
+}
+.service-item:hover .__service-description,
+.__service-item-link {
+  color: #fff;
+}
+.service-item:hover .__service-item-link {
+  color: #fff;
+}
+
+/* department section  */
+.react-tabs__tab-list {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  list-style: none;
+}
+.react-tabs__tab {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--title-color);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+}
+.react-tabs__tab--selected {
+  color: #ffab25;
+  border: none;
+}
+
+/* doctor section  */
+
+.doctor-item:hover .doctor-details {
+  transform: translateY(0);
+}
+.doctor-item:hover img {
+  transform: scale(1.1);
+}
+.doctor-item img {
+  transition: all 0.4s ease-in-out;
+}
+
+.doctor-details {
+  transition: all 0.5s ease-in-out;
+  transform: scale(2, 3) translateY(100%);
+}
+
+/* form section  */
+.option-item {
+  font-size: 16px;
+  color: var(--title-color);
+}
+/* footer  */
+.footer-widget-2 {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .section-side-padding {
+    padding: 0 6%;
+  }
+}
+@media screen and (max-width: 998px) {
+  .react-tabs__tab-list {
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .react-tabs__tab-list {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+  }
+  .react-tabs__tab {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .footer-widget-2 {
+    display: block;
+  }
+}
