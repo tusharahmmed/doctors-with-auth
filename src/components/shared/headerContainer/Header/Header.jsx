@@ -4,19 +4,24 @@ import styled from "styled-components";
 import {Twirl as Hamburger} from "hamburger-react";
 import MobileMenuSection from "../MobileMenuSection/MobileMenuSection";
 import {device} from "../../../../utils/screenSize";
+import {Button} from "../HeroSection/HeroSection";
+import {Link} from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const MenuLinks = () => (
     <>
-      <a href="#">Home</a>
+      {/* <a href="#">Home</a>
       <a href="#service">Services</a>
       <a href="#departments">Departments</a>
       <a href="#doctor">Doctor</a>
       <a href="#blog">Blog</a>
       <a href="#testimonial">Testimonial</a>
-      <a href="#appointment">Appointment</a>
+      <a href="#appointment">Appointment</a> */}
+      <Link to="/">Home</Link>
+      <Link to="/about">About</Link>
+      <Link to="/sign-up">Register</Link>
     </>
   );
 
@@ -32,6 +37,7 @@ const Header = () => {
         <RightSide>
           <DesktopMenu>
             <MenuLinks />
+            <Button>Login</Button>
           </DesktopMenu>
 
           <MobileMenu>

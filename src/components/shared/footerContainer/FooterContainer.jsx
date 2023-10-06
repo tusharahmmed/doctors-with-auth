@@ -2,11 +2,14 @@ import styled from "styled-components";
 
 import Footer from "./Footer/Footer";
 import {device} from "../../../utils/screenSize";
+import {useLocation} from "react-router-dom";
 
 const FooterContainer = () => {
+  const location = useLocation();
+
   return (
-    <Container>
-      <Wraper className="section-side-padding">
+    <Container location={location.pathname}>
+      <Wraper location={location.pathname} className="section-side-padding">
         <Footer />
       </Wraper>
 
@@ -23,20 +26,33 @@ export default FooterContainer;
 
 const Container = styled.section`
   background: #d6d5e5;
-  clip-path: polygon(0% 0%, 50% 11%, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: ${(props) =>
+    props.location === "/"
+      ? "polygon(0% 0%, 50% 11%, 100% 0%, 100% 100%, 0% 100%)"
+      : "0px"};
 
   @media ${device.pad} {
-    clip-path: polygon(0% 0%, 50% 11%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: ${(props) =>
+      props.location === "/"
+        ? "polygon(0% 0%, 50% 11%, 100% 0%, 100% 100%, 0% 100%)"
+        : "0px"};
   }
   @media ${device.mobile} {
-    clip-path: polygon(0% 0%, 50% 3%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: ${(props) =>
+      props.location === "/"
+        ? "polygon(0% 0%, 50% 3%, 100% 0%, 100% 100%, 0% 100%)"
+        : "0px"};
   }
 `;
 const Wraper = styled.div`
   background: var(--section-background);
   padding-top: 8rem;
   padding-bottom: 2rem;
-  clip-path: polygon(0% 0%, 50% 15%, 100% 0%, 100% 100%, 0% 100%);
+
+  clip-path: ${(props) =>
+    props.location === "/"
+      ? "polygon(0% 0%, 50% 15%, 100% 0%, 100% 100%, 0% 100%)"
+      : "0px"};
 
   background-image: url("/img/footer.png");
   background-repeat: no-repeat;
@@ -47,10 +63,17 @@ const Wraper = styled.div`
     background-size: 180px;
   }
   @media ${device.pad} {
-    clip-path: polygon(0% 0%, 50% 15%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: ${(props) =>
+      props.location === "/"
+        ? "polygon(0% 0%, 50% 15%, 100% 0%, 100% 100%, 0% 100%)"
+        : "0px"};
   }
   @media ${device.mobile} {
-    clip-path: polygon(0% 0%, 50% 5%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: ${(props) =>
+      props.location === "/"
+        ? "polygon(0% 0%, 50% 5%, 100% 0%, 100% 100%, 0% 100%)"
+        : "0px"};
+
     padding-top: 4rem;
   }
 `;

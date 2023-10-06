@@ -3,15 +3,16 @@ import styled from "styled-components";
 import Header from "./Header/Header";
 import HeroSection from "./HeroSection/HeroSection";
 import {device} from "../../../utils/screenSize";
+import {useLocation} from "react-router-dom";
 
 const HeaderContainer = () => {
+  const location = useLocation();
+
   return (
     <>
       <Header />
       <Container>
-        <Wraper>
-          <HeroSection />
-        </Wraper>
+        <Wraper>{location.pathname === "/" && <HeroSection />}</Wraper>
       </Container>
     </>
   );

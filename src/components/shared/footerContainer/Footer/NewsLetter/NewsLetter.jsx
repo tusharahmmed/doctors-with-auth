@@ -37,7 +37,7 @@ const Form = styled.form`
   padding-top: 2rem;
 `;
 const InputWraper = styled.div`
-  width: 35%;
+  width: 38%;
   margin: auto;
   position: relative;
 
@@ -52,7 +52,7 @@ const InputWraper = styled.div`
   }
 
   input {
-    height: 60px;
+    height: 50px;
     width: 100%;
     border-radius: 999px;
     border: none;
@@ -67,6 +67,7 @@ const InputWraper = styled.div`
   }
 `;
 const SubcribeBtn = styled(Button)`
+  height: 100%;
   position: absolute;
   right: 0px;
   top: 0px;

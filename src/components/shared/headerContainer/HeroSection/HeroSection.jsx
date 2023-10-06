@@ -80,8 +80,8 @@ const Description = styled.p`
 `;
 
 export const Button = styled.button`
-  width: 140px;
-  height: 58px;
+  width: 130px;
+  height: 48px;
   margin: auto;
   padding: 15px 30px;
   background: var(--button-background);
